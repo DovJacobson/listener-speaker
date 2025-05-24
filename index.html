@@ -1,0 +1,694 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Dov Jacobson: Speaker, Listener</title>
+    <meta name=    "description" 
+          content="Presentations by Dov Jacobson about Game Based Learning and related topics." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta charset="UTF-8">
+    <meta name="robots"   content="index, nofollow"/>
+    <link rel="apple-touch-icon"          sizes="180x180" href="https://cdn.glitch.global/2d3d5d4c-7be8-4459-a4ba-8a783e18a9e5/apple-touch-icon.png?v=1667190226462">
+    <link rel="icon"       type="image/png" sizes="32x32" href="https://cdn.glitch.global/2d3d5d4c-7be8-4459-a4ba-8a783e18a9e5/favicon-32x32.png?v=1667190217443">
+    <link rel="icon"       type="image/png" sizes="16x16" href="https://cdn.glitch.global/2d3d5d4c-7be8-4459-a4ba-8a783e18a9e5/favicon.ico?v=1667190188931">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- ios black translucent status bar -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name=      "mobile-web-app-capable" content="yes" />
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Kdam+Thmor+Pro&family=Rufina&family=Share+Tech+Mono&display=swap");
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+
+      font-family: "Rufina", sans-serif;
+      font-family: "Kdam Thmor Pro", sans-serif;
+      /* font-family: 'DM Sans', sans-serif;
+ 
+    font-family: 'Share Tech Mono', monospace;*/
+      font-weight: 500;
+    }
+
+    #banner {
+      width: 100vw;
+      height: 25vw;
+      margin: 2vw 0;
+      background-image: url("https://cdn.glitch.global/2d3d5d4c-7be8-4459-a4ba-8a783e18a9e5/grainybanner.png?v=1667147093032");
+    /*background-image: url("https://cdn.glitch.global/2d3d5d4c-7be8-4459-a4ba-8a783e18a9e5/banner.jfif?v=1663145673679");*/
+      background-size: cover;
+    }
+
+    iframe {
+      pointer-events: none;
+    }
+    #dov {
+      color: rgb(211, 174, 122);
+      font-size: 6vmin;
+      text-align: center;
+      margin: auto;
+      font-weight: 700;
+
+      font-family: "Rufina", sans-serif;
+    }
+    #dov u {
+      text-decoration: underline rgb(103, 76, 38);
+    }
+
+    #dov .sub {
+      color: rgb(167, 127, 71);
+      font-size: 3vmin;
+    }
+
+    #talk {
+      background-color: rgb(30, 27, 48);
+      color: white;
+    }
+    #talk > * {
+      width: 90vw;
+      margin: 0 auto;
+      background-color: #779;
+      border-left: 2vw solid #779;
+      border-right: 2vw solid #779;
+      text-align: center;
+      font-weight: 400;
+      line-height: 1.1;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      padding: 2vmin;
+      font-size: 1.5rem;
+    }
+    p{ margin: .8vw 0; }
+
+    #talk h1 {
+      font-size: 3rem;
+      text-decoration: underline rgb(51, 51, 64);
+      padding: 2vw 0 .5vw 0 0;
+    }
+    #talk h2 {
+      font-size: 1.8rem;
+      padding: .5vw;
+    }
+    #talk #frame {
+      background-color: rgb(20, 18, 33);
+    }
+    #blurb {
+      text-align: start;
+      color: black;
+      font-size: 1.3rem;
+    }
+    .sub {
+      color: rgb(115, 113, 113);
+    }
+    #notes {
+      color: rgb(198, 191, 116);
+      font-size: 1rem;
+    }
+    #talk .head {
+      background-color: #334;
+      color: #aa8;
+    }
+    #talk #slide {
+      box-sizing: content-box;
+      width: 100%;
+      height: 50vw;
+      margin: 0;
+      border: none;
+    } /* height*9/16 */
+
+    button#back {
+      width: fit-content;
+      margin: 0 auto;
+      text-align: center;
+      padding: 2px;
+      background-color: gold;
+      color: black;
+      float: right;
+    }
+
+    #tags button {
+      background-color: rgb(90, 90, 90);
+      color: white;
+    }
+    #tags button.any[selected] {
+      background-color: rgb(236, 232, 149);
+      color: black;
+    }
+    #tags button.all[selected] {
+      background-color: rgb(142, 229, 162);
+      color: black;
+    }
+    #tags button#ALL.any {
+      background-color: rgb(255, 242, 0);
+      color: black;
+      margin: 0 2vw 0 2vw;
+    }
+    #tags button#ALL.all {
+      background-color: rgb(18, 227, 67);
+      color: black;
+      margin: 0 2vw 0 2vw;
+    }
+    #home li {
+      list-style: none;
+      border: thin dotted rgb(64, 64, 64);
+      margin: 0.7vw;
+      padding: 0.5vw;
+    }
+    #home li div {
+      display: inline;
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+    }
+
+    #home li.clickable {
+      background-color: #333;
+      color: #bbb;
+    }
+    #home li.meta {
+      margin-top: 2vw;
+      background-color: rgb(55, 64, 76);
+      color: rgb(139, 167, 239);
+    }
+
+
+    
+    
+    #tags button.clickable:hover,
+    #home li.clickable:hover {
+      color: #fff;
+      border: thin solid gold;
+    }
+
+    #home li.clickable:hover .sub {
+      color: gold;
+    }
+
+    #home li#help {
+      color: rgb(174, 174, 225);
+      margin: 1vw 5vw;
+      padding: 1vw 10vw;
+      pointer-events: none;
+    }
+
+
+    #help span {
+      color: black;
+      pointer-events: all;
+    }
+    #help span.any {
+      background-color: rgba(255, 242, 0, 0.7);
+    }
+    #help span.all {
+      background-color: rgba(18, 227, 67, 0.7);
+    }
+    #help span:hover{
+      color: #fff;
+      border: thin solid white;
+    }
+
+    
+    
+    
+    
+    div.left {
+      float: left;
+      display: inline;
+      width: 20%;
+      text-align: right;
+    }
+    div.right {
+      float: left;
+      display: inline;
+    }
+
+    small { display:block; margin: 28px 0px;  font-size:.6em;}  
+    
+    i { font-style:normal;  color: lavender; font-weight:700;}
+    
+  </style>
+
+  <body>
+    <div id="dov">
+      <u>&nbsp;Dov Jacobson&nbsp;</u>
+      <div class="sub">Visiting Speaker <br />(...and Listener )</div>
+    </div>
+    <div id="banner"></div>
+
+    <section id="talk">
+      <!--      <div class= "head">PRESENTATION DETAILS  <button      id="back"     >BACK</button></div> -->
+      <h1 id="title"></h1>
+      <h2 id="subtitle"></h2>
+      <div id="frame">
+        <iframe id="slide" allowfullscreen="true"></iframe>
+      </div>
+      <div id="blurb"></div>
+      <div id="notes"></div>
+    </section>
+
+    <section id="home">
+      <div id="help"></div>
+      <div><span id="tags"></span></div>
+      <ul id="talks"></ul>
+    </section>
+    <footer><a href="mailto:dov@gamesthatwork.com"  target="_blank" >Contact</a></footer>
+
+    <script>
+      const dom = {
+        root: document.querySelector("body"),
+        body: document.querySelector("body"),
+        talk: document.querySelector("#talk"),
+        home: document.querySelector("#home"),
+        help: document.querySelector("#help"),
+        tags: document.querySelector("#tags"),
+        list: document.querySelector("#home ul"),
+      };
+
+      const slide = {
+        url: "https://docs.google.com/presentation/d/e/2PACX-1vT6FGAcCBcUBgganYG2g0mUSOXQgWeJL-VD4NGsxk4OubHDfQ0_5mQfWSE0fUMjDu_tTC570NBJ_kIL/embed?",
+        transition: 1,
+        set: {
+          start: false,
+          loop: false,
+          delayms: 100000,
+          rm: "minimal",
+          slide: 15,
+        },
+      };
+
+      const undupe = (array) =>
+        array.filter((i, idx) => array.indexOf(i) === idx);
+
+      const showTalk = (n) =>
+        showOne(
+          talks?.[n] ?? talks.find((talk) => talk.title === n) ?? talks[0]
+        );
+
+      const showPick = (p) =>
+        showOne(
+          (p.type == "talk"
+            ? talks.find((talk) => talk.title === p.firstElementChild.innerText)
+            : page[p.type]) ?? page.error
+        );
+
+      const showOne = (t) => {
+        dom.talk.hidden = !(dom.home.hidden = true);
+        showSlide(t.slide);
+        // slide.set.slide=  t.slide;
+        // dom.talk.querySelector( "#slide" ).src=
+        //         slide.url+Object.keys( slide.set ).map( k=>k+'='+slide.set[k]).join('&');
+        ["title", "subtitle", "blurb", "notes"].forEach(
+          (k) =>
+            (document.querySelector("#" + k).innerHTML = "<p>"+t[k].replace(
+              /\n/gm,
+              "</p><p>"
+            )+"</p>" )
+        );
+        dom.talk.addEventListener("click", showHome);
+      };
+
+      const showSlide = (s) =>
+        (dom.talk.querySelector("#slide").src =
+          slide.url +
+          Object.keys(slide.set)
+            .map(
+              (k) =>
+                k + "=" + (k == "slide" ? s ?? slide.transition : slide.set[k])
+            )
+            .join("&"));
+
+      const showHome = (n) => {
+        dom.home.hidden = !(dom.talk.hidden = true);
+        showSlide();
+        let logic = {
+          name: tag.ALL ? "ALL" : "ANY",
+          func: tag.ALL ? "every" : "some",
+        };
+        dom.tags.innerHTML = Object.keys(tag)
+          .map(
+            (k) =>
+              `<button id="${k}"${tag[k] ? "selected" : ""} class="clickable ${
+                logic.name
+              }">${k}</button>`
+          )
+          .join("");
+        // dom.tags.firstElementChild.innerText = `[ ${logic.name.toUpperCase()} ]`
+        dom.tags.querySelector("#ALL").innerText = logic.name;
+        dom.tags.querySelectorAll("button").forEach((t) =>
+          t.addEventListener("click", (e) => {
+            tag[e.target.id] = !tag[e.target.id];
+            showHome();
+          })
+        );
+
+        dom.list.innerHTML = talks
+          .filter(
+            (talk) =>
+              talk.meta ||
+              (talk.tags &&
+                Object.keys(tag)
+                  .filter((key) => tag[key] && key !== "ALL")
+                  [logic.func]((key, I, A) => talk.tags.includes(key)))
+          )
+          .map(
+            (t, i) =>
+              `<li class="clickable${t.meta ? " meta" : ""}" type="talk" >
+                                <div class="title">${t.title}</div>     
+                                <div class="sub"  >${t.subtitle}</div>     
+                        </li>`
+          )
+          .join("");
+
+        dom.list.insertAdjacentHTML(
+          "afterbegin",
+          dom.list.children.length > talks.filter((t) => t.meta).length
+            ? ""
+            : `<li id="help">Dov loves to discuss many aspects of <i>games</i> and game based learning.<br><br>
+                Use the bar above to list talks that include <span class="clickable any">&nbsp;&nbsp;ANY&nbsp;&nbsp;</span> or <span class="clickable all">&nbsp;&nbsp;ALL&nbsp;&nbsp;</span> the sub-topics you select.` );
+
+        dom.home
+          .querySelectorAll("li")
+          .forEach((l) =>
+            l.addEventListener("click", (e) => showPick(e.currentTarget))
+          );
+        dom.home
+          .querySelectorAll("span.any, span.all")
+          .forEach((l) => 
+             l.addEventListener("click", (e) => {
+                 e.stopPropagation();
+                 tag.ALL = e.currentTarget.innerText.includes("ALL");  
+                 showHome();  
+                 })
+          );
+        
+        
+        
+      };
+
+      var talk = 0;
+
+      //document.body.addEventListener( "click",  ()=> showTalk( talk++ ) );
+
+      //showTalk( Math.floor(Math.random( )*talks.length  ))
+      window.onload = () => {
+        console.log(tags);
+
+        showHome();
+      };
+
+      const page = {};
+
+      const talks = [
+        
+        {
+          slide: 6,
+          title: "Make a Game Today",
+          subtitle: "Have fun making your first learning game.",
+          blurb: `Let's get together and make a game.
+                It's a real digital game for Game-Based Learning, and we make it from scratch - with no previous experience necessary. Just bring a laptop, if you can!
+                Interactive stories are great for learning, so we use a simple engine called TWINE that is designed for story-oriented games. 
+                You don't need any programming skills, just a clever imagination and the desire to have fun together.
+                Twine is absoluely free: No cost. No registration. No download. No ads. No watermark, And a very gentle learning curve.`,
+          notes: `This is a hands-on workshop, lasting 1-3 hours.`,
+          tags: "hands on,code,design,dev",
+        },
+        {
+          slide: 7,
+          title: "Art on Computers 1969-2022",
+          subtitle: "A Personal History",
+          blurb: `Art and Computers seem made for each other. But at the beginnig, they were completely alien worlds. In the late 1960's, young rule-breakers began to claim computers as the tools of art and to declare creative vision as a goal of computer science.
+                 In this first-person review, we will take the journey from punch cards to virtual reality and beyond. We'll see shaky experiments in mainframe computer labs. We'll see art appear in 1983 in a tiny basement gallery on the Lower East Side, and see the same work acquired a few months ago by the Museum of Modern Art.`,
+          notes: `This talk can include some physical artifacts.`,
+          tags: "design,art,technology,art",
+        },
+        {
+          slide: 8,
+          title: "Elements of Immersive Learning",
+          subtitle: "An overview of Mixed Reality",
+          blurb: `When fiction feels real, we call it <i>immersive</i>. 
+                Digital experience always becomes more immersive, year after year. We can lose track. Terms like Virtual Reality or Metaverse can be confusing since different people use and abuse them differntly.
+                
+                Let's break immersive technology down into its elements. These are human elements. Each is built on a feature of human perception.
+                We can identify at least 14 different elements that are used by digital artists to create the sensation of immersion. We'll see how each one works - and how they work together.`,
+          notes: `Includes a link to smartphone content so the audience can play along.`,
+          tags: "learning,technology,design,art",
+        },
+        {
+          slide: 9,
+          title: "Five Quadrants of Learning",
+          subtitle: "What makes Game Based Learning so powerful?",
+          blurb: `Learning has many different objectives. We might memorize a fact, or develop a skill. We might build a habit or adopt an attitude.
+                We learn each of these in different ways, using different media, even different senses.
+                If you can classify your learning problem accurately, you can design a more effective learning experience.
+                This talk describes the Five-Quadrant model.  The four corners of the model: Facts, Skills, Habits, Attitudes, are the quadrants of a 2D graph whose axes are Thought and Action.
+                The magic fifth quadrant of learning is where Game Based Learning offers a shortcut to mastery.`,
+          notes: `Combine with 'Cybersecurity Games', which illustrates the 5 Quadrants.`,
+          tags: "learning,design,psychology",
+        },
+        {
+          slide: 10,
+          title: "Cybersecurity Games",
+          subtitle: "Comparative study",
+          blurb: `Good learning games achieve their learning objectives.<br><br>Great games solve real life problems.<br><br>Let's study real world examples. Consider the problem of cybersecurity. We'll see how five companies looked at the issue of cybersecurity, but like blind men with an elephant, they each saw a different problem, chose a different learning objective and built a different game. The games were well made and they all, to varying degrees, acheived their learning goals. 
+                But which actually solved the problem?`,
+          notes: `Combines with The Five Quadrants of Learning.`,
+          tags: "learning,design,case study,business",
+        },
+        {
+          slide: 11,
+          title: "Brush Up",
+          subtitle: "How to Brush a Billion Teeth",
+          blurb: `To tell the truth - it was originally just an excuse to play with new game technology. It became an exploration of a child's perspective on toothbrushing and has matured into a campaign to save kids' teeth around the world. The game has flourished on many media, in many cultures and among many diverse neurotypes. <br><br> Best of all - independent random controlled trials show that it makes a clinical difference in oral health.`,
+          notes: `Case history`,
+          tags: "learning,design,psychology,case study",
+        },
+        {
+          slide: 12,
+          title: "Hacksaw Ridge in Virtual Reality",
+          subtitle: "Can museum visitors learn to be heros?",
+          blurb: `Desmond Doss was a concientious objector who volunteered to serve in the Navy as a medical corpsman.
+                He refused to carry - or even touch a weapon. But he still earned the Medal of Honor for his valor.
+                One by one, he carried 76 wounded Marines to safety during their assault on Okinawa's Hacksaw Ridge.<br><br>
+
+                Let's see how virtual reality might help museum visitors experience Doss's test of courage and principles.<br>
+                And perhaps measure their own!`,
+          notes: `15 min. Includes video of VR.`,
+          tags: "learning,design,psychology,case study",
+        },
+        {
+          slide: 13,
+          title: "Intellectual Property",
+          subtitle: "What kinds of IP are important to the game industry?",
+          blurb: `Game developers and publishers traffic in many layers of Intellectual Property, from obvious elements like Name, Image and Likeness to subtle concerns with open source licenses. Many of these are not always apparent to professionals newly interested in game licensing and law.
+
+                Let's review the game industy's spectrum of Intellectual Property concerns.`,
+          tags: "business,dev",
+          notes: `10 min. For a business/legal audience.`,
+        },
+        {
+          slide: 14,
+          title: "Win The Boss Fight",
+          subtitle: "Why can't you get your game green-lit?",
+          blurb: `Games are powerful tools for learning. So your team of learning profesionals should make a few games!
+                You always bring this up -- and your boss always shoots it down. Even when you produce evidence of how well it will work.
+
+                Is your Boss just a dinosaur - stuck in the old way of doing things?
+                Maybe. But maybe the boss has legitmate concerns. 
+                Your boss claims that games are expensive...  and risky.
+                Object, and you won't get far. The boss is right. Game making involves many risks and expenses.
+                Your only hope is acknowledge this with a plan to mitigate risk and control expenses.
+
+                Let's see what such a plan might be.`,
+          notes: `Audience: Learning professionals in organizational settings.`,
+          tags: "business,design,dev,learning,psychology",
+        },
+        {
+          slide: 15,
+          title: "Cloud Source",
+          subtitle: "Game Making as a Game",
+          blurb: `The online world offers a vast creative resource to every project. The benefits are great: highly diverse and massive talent is always immediately available at scale.
+                But with great power comes great challenges. Recruiting is difficult. Directing is very tricky. Assessment can be laborious. And the reward structure must incent the behavior you want. Make sure these are all transparent and fair - and not easily gamed. 
+                Let's consider the tools available and the tools you might need to build.
+                Bonus topic: Is blockchain the secret sauce?`,
+          notes: `May include live crowd projects.`,
+          tags: "business,code,design,dev,psychology,technology",
+        },
+        {
+          slide: 16,
+          title: "Boeing",
+          subtitle: "Experiments with Game-Based Learning",
+          blurb: `Engineers are human.
+                All humans make errors.
+                Engineering errors can be very expensive. That's why Boeing studies them carefully. They noticed a cluster of errors due to a simple confusion of two ideas. Training did not help. Engineers never make the error when they are tested in class. They make the error on the job when they are distracted - usually by the job's more salient challenges. 
+                Let's see how Boeing's problem was addressed by Game Based Learning. We'll review the whole process of Discovery, Design, Development and Deployment.`,
+          notes: "Case History, with cartoons",
+          tags: "business,case study,design,dev,learning,technology",
+        },
+        {
+          slide: 17,
+          title: "Learning by Losing",
+          subtitle: "The Case for Constructive Failure",
+          blurb: `We learn from failure.
+                That's the magic engine of Game Based Learning.
+                But the dirty secret is that while we always learn from failure, we usually learn the wrong lesson.
+                We learn that we're no good.
+                Failure teaches us that we are no good at math, no good at sports, no good at remembering names.
+                The designer of Game Based Learning needs to avoid this response, and instead stimulate the Mastery Response - in which failure challenges the player to try agan, and to do better. 
+                Let's consider how to we design this Constructive Failure.`,
+          notes: `40 Minutes`,
+          tags: "design,dev,learning,psychology",
+        },
+        {
+          slide: 18,
+          title: "Hands-On Learning",
+          subtitle: "The Curious Hand",
+          blurb: `We learn with our eyes and our ears. Of course. We look at screens and listen to lectures. 
+          
+                But don't forget how much we learn with our curious hands.
+
+                Eyes and ears capture light and sound, while hands capture mass and texture and temperature. But unlike the eyes and ears, the hands are not passive sensors.
+                The hands are experimental, and explorational. We learn by doing. 
+                This is the heart of great educational theorists like Maria Montessori and Seymour Papert. It is proven every day in thousands of Montessori-type classrooms.
+
+                The moving hand is the root of game based learning. As designers, we must not allow fascinating images and engaging audio to distract us from the playful action at the core of game success.`,
+          notes: `Includes play-on-the-phone audience participation`,
+          tags: "case study,design,dev,learning,psychology",
+        },
+        {
+          slide: 19,
+          title: "Implicit Bias vs. Humor",
+          subtitle: "What's so funny?",
+          blurb: `It is hard to be funny without offending somebody. 
+                
+                Modern organizations create policies to demonstrate respect for sensitive identity groups. Compliance with these policies often makes it more difficult to deliver a funny game. We have a brief case study to illustrate this. 
+                The good news is that constraints stimulate creativity.  Resistance is fertile! 
+                Game designers can employ the improv motto of <i>"Yes, and..."</i>  to deliver games that are both supportive and entertaining. We can avoid both the cruelty of stereotypes and the deadly banality of politically correct corporate comittee work.`,
+          notes: `15 minutes.`,
+          tags: "business,case study,design,psychology",
+        },
+        {
+          slide: 20,
+          title: "Five Weird Game Dev Hacks",
+          subtitle: "Click here for tips and tricks",
+          blurb: `You can always make a great game if you have enough time and talent, but in real life you never do. Especially in Game Jams and similar Hackathons. 
+                There are a few tricks you might use to help your team make a better game.
+
+                Let's look at five quick and easy power-ups to boost your game!`,
+          notes: `10 minute pep talk for Game Jam teams.`,
+          tags: "code,design,dev,hands on",
+        },
+        {
+          slide: 21,
+          title: "Game vs Pandemic",
+          subtitle: "Working with the CDC in 2020",
+          blurb: `When the Covid Pandemic hit, public health officials looked for new ways to change behavior at scale.
+                At the US Centers for Disease Control (CDC), a task group met every week to explore the potential of digital games. This group produced a series of concepts and prototypes to improve hand hygiene among children. These interventions reached out to young players with video filters and AR magic, with full playable games and TikTok initiatives.
+                `,
+          notes: `20 minutes. No happy ending.`,
+          tags: "business,case study,design,dev,learning,psychology,technology",
+        },
+        {
+          slide: 22,
+          title: "Song as a Vector",
+          subtitle: "Game based learning thorugh words and music",
+          blurb: `Song can be an effective tool for adult learning and for children. It offers several powers: Its mnemonic power is always valuable, as it is emotional resonance. Often it helps by making repetition enjoyable. When learning a real-time skill, the song can illustrate both job cadence and work rhythm. Song can deliver humor, and perhqps, if you are lucky, a chance of virality. `,
+          notes: `No singing is required of the audience. Nor of the speaker.`,
+          tags: `case study,design,learning,psychology`,
+        },
+
+        
+               {
+        slide: 23,
+        title: "Artificial Intelligence",
+        subtitle: "Overview of a New Technology",
+        blurb: `Large Language Models and the Generative AI systems they empower are changing the future of human creative work. We have a really big wave to surf. We better understand what these systems are, how they work and where they lead. Beware: this attempt to demystify Artificial Intelligence has an unintended consequence: It tends to demystify our own intelligence as well. `,
+        notes: `This sets the table for the hands-on AI Workshops .`,
+        tags:  `ai,design,technology,psychology`,
+        },
+
+        {
+        slide: 24,
+        title: "AI Game Jam: Creative Tools",
+        subtitle: "Generative AI in your Game Dev Workflow",
+        blurb: `Starting with a large (downloadable) list of tools, we consider all the ways AI can be used in the game development process. Sure, it can crank out content - but it will also help analyze, ideate, pitch and test. You will break into small creative groups to exercise these tools in friendly competition. `,
+        notes: `About 1 hour with lots of particpation.`,
+        tags:  `ai,design,technology,psychology,hands on`,
+        },
+
+
+        {
+        slide: 25,
+        title: "AI Game Jam: Embedded Models",
+        subtitle: "Real AI Characters in your Real Game",
+        blurb: `Download a special framework that combines a very accessible game system (Twine) with a powerful LLM (OpenAI). You will learn to use the API to invoke and shape your very own fully live game character using true AI. Your small team competes with others to create nuanced characters and memorable games.`,
+        notes: `About 1 hour with loads of particpation.`,
+        tags:  `ai,design,technology,psychology,hands on`,
+        },
+        
+        
+        
+        
+                
+        {
+          meta: true,
+          slide: 2,
+          title: "What does he know?",
+          subtitle: "He's still learning.",
+          blurb: `Dov is a committed explorer in the fields of computer graphics, games and game-based learning. He is a game artist whose art is now found in major museums. He is a studio head, whose entertainment games have reached the top ten on US charts. He is a student of Game-Based Learning whose learning games have been awarded significant (and unsolicited) prizes.
+                For a few years, he led a pioneering Game Development faculty at NYU.
+                
+                <a href="https://www.linkedin.com/in/dovjacobson/">Dov</a> has learned a lot from his various successes. 
+                He has learned far more from his abundant failures.`,
+          notes: `He is eager to share what he has learned.`,
+          //      tags: 'art,business,case study,code,design,dev,hands on,learning,psychology,technology'
+        },
+        {
+          meta: true,
+          slide: 4,
+          title: "From whom has he learned?",
+          subtitle: "From everyone he meets.",
+          blurb: `Dov is lucky to work with accomplished innovators who share ideas and talent. Some are scientists. Some artists. Educators, entrepreneurs, analysts. Administrators and computer programmers. Actors, writers and testers. Indigenous craftswomen and storytellers.
+                From each coworker, client and competitor, from students, attendees and interns, Dov tries to learn something.`,
+          notes: `He hopes to learn a lot from you.`,
+          //      tags: 'art,business,case study,code,design,dev,hands on,learning,psychology,technology'
+        },
+        {
+          meta: true,
+          slide: 3,
+          title: "Where does he speak?",
+          subtitle: "Anywhere he's welcome.",
+          blurb: `Dov loves to speak about topics surrounding the intersection of games and learning. He has presented at fifty formal conventions and in classrooms, conference rooms, on campuses and (once) in a castle! 
+                He'll talk with senior professionals or with kindergartners and anybody in between - in any format from impromptu panelist to peer-reviewed journal author.`,
+          notes: `He would love to talk with you.`,
+          //       tags: 'art,business,case study,code,design,dev,hands on,learning,psychology,technology'
+        },
+
+        
+        
+        
+
+        
+      ];
+
+      //const tags= undupe( talks.map( t=> (t?.tags??"").split(",")).flat(2).filter( n=>n) ).map( tag=>Object( {tag, on:true}) )
+      const tag = Object.fromEntries(
+        undupe(
+          talks
+            .map((t) => (t?.tags ?? "").split(","))
+            .flat(2)
+            .concat(["ALL"])
+            .filter((n) => n)
+        )
+          .sort()
+          .map((tag) => [tag, 0])//Math.random() > 0.666])
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+Move from Glitch to ...
+
+
+ping the slides deck on page load to warm it up before first display
+
+
+
+
+maybe externalize the database as a json file
